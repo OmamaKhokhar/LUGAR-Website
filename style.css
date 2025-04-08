@@ -53,6 +53,40 @@ body {
 }
 
 /* ================== */
+/* Buttons */
+/* ================== */
+
+.project-button,
+.contact-button {
+    padding: clamp(8px, 1.4vw, 16px) clamp(14px, 1.8vw, 22px);
+    font-size: clamp(12px, 2vw, 14px);
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid var(--secondary-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.project-button {
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+}
+
+.project-button:hover {
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+}
+
+.contact-button {
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+}
+
+.contact-button:hover {
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+}
+
+/* ================== */
 /* Header Section*/
 /* ================== */
 header {
@@ -84,6 +118,12 @@ nav ul.nav-list {
     text-transform: uppercase;
 }
 
+ul.nav-list a:hover {
+    color: rgb(13, 23, 31);
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+
 
 /* ================== */
 /* Mobile Menu Icon */
@@ -109,11 +149,132 @@ nav ul.nav-list {
 }
 
 /* ================== */
+/* Hero Section */
+/* ================== */
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: clamp(40px, 7.5vw, 100px);
+}
+
+/* Hero Content */
+.hero-content {
+    padding-bottom: clamp(30px, 8vw, 110px);
+    width: 57%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.hero-content h1 {
+    font-size: clamp(35px, 7vw, 90px);
+    font-family: "Mulish-Bold";
+    color: var(--secondary-color);
+}
+
+.hero-content p {
+    font-size: clamp(18px, 2vw, 20px);
+    color: var(--secondary-color);
+    line-height: 1.5;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 6%;
+    margin-top: 15px;
+}
+
+/* Hero Section Symbols */
+/* All are position with respect to main parent (Image Container)*/
+.hero-section-arrow,
+.hero-section-mark-1,
+.hero-section-mark-2 {
+    position: absolute;
+}
+
+.hero-section-mark-1 {
+    right: 33%;
+    top: -4%;
+}
+
+.hero-section-mark-2 {
+    top: 17%;
+    left: -4%;
+}
+
+.hero-section-arrow {
+    width: clamp(70px, 11vw, 170px);
+    top: 53%;
+    left: -30%;
+}
+
+/* Hero Image */
+.hero-image {
+    width: 55%;
+    align-self: stretch;
+    margin-right: -14.8%;
+    position: relative;
+}
+
+.hero-image img.hero-section-image {
+    width: 100%;
+    height: 100%;
+}
+
+/* ================== */
+/* Above Larger Screen */
+/* ================== */
+@media (min-width: 1441px) {
+
+    /* Hero Section */
+    .hero-content {
+        width: 50%;
+    }
+
+    .hero-section-arrow {
+        top: 54%;
+        left: -35%;
+    }
+
+    .hero-image {
+        width: 48%;
+        margin-right: 0;
+    }
+}
+
+/* ================== */
+/* From Tablet to large screen */
+/* ================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    /* Hero section */
+    .hero-content {
+        width: 52%;
+        align-self: center;
+    }
+
+    .hero-content h1 {
+        font-size: 6.4vw;
+    }
+
+    .hero-section-arrow {
+        width: 8vw;
+        top: 60%;
+        left: -18%;
+    }
+
+    .hero-image {
+        width: 60%;
+    }
+}
+
+
+/* ================== */
 /* From Tablet to Smaller Screen */
 /* ================== */
 @media (max-width: 768px) {
 
-    /* Header */
+    /* Header  */
     /* Menu */
     .menu-icon {
         display: flex;
@@ -157,7 +318,6 @@ nav ul.nav-list {
     nav.nav-container ul.nav-list {
         flex-direction: column;
         gap: 40px;
-
     }
 
     /* Show Menu When Toggled */
@@ -168,4 +328,40 @@ nav ul.nav-list {
         visibility: visible;
     }
 
+    /* Hero Section */
+    .hero-container {
+        flex-direction: column;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero-image {
+        display: flex;
+        width: 90%;
+        margin-left: 25%;
+
+    }
+
+    .hero-section-arrow {
+        display: none;
+    }
+
+    .hero-section-mark-1,
+    .hero-section-mark-2 {
+        width: 3vw;
+    }
+}
+
+/* ================== */
+/* From Small to Smaller Screen */
+/* ================== */
+@media (max-width: 425px) {
+
+    /* Hero Section */
+    .hero-image {
+        width: 120%;
+        margin: 0%;
+    }
 }
