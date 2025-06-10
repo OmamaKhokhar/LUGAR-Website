@@ -13,7 +13,7 @@
 /* ================== */
 
 :root {
-    --primary-color: #AFD4E2;
+    --primary-color: rgb(175, 212, 226);
     --secondary-color: #1E3240;
     --accent-color: #BDBDBD;
     --background-color: #FFFFFF;
@@ -155,6 +155,7 @@ ul.nav-list a:hover {
     display: flex;
     justify-content: space-between;
     padding-top: clamp(40px, 7.5vw, 100px);
+    margin-bottom: clamp(40px, 14vw, 180px);
 }
 
 /* Hero Content */
@@ -166,13 +167,13 @@ ul.nav-list a:hover {
     gap: 10px;
 }
 
-.hero-content h1 {
+.hero-content h1.hero-content-heading {
     font-size: clamp(35px, 7vw, 90px);
     font-family: "Mulish-Bold";
     color: var(--secondary-color);
 }
 
-.hero-content p {
+.hero-content p.hero-content-paragraph {
     font-size: clamp(18px, 2vw, 20px);
     color: var(--secondary-color);
     line-height: 1.5;
@@ -219,6 +220,62 @@ ul.nav-list a:hover {
 .hero-image img.hero-section-image {
     width: 100%;
     height: 100%;
+}
+
+/* About Section */
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: clamp(40px, 14vw, 180px);
+}
+
+/* About Image */
+.about-image {
+    width: 45%;
+}
+
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    
+}
+
+/* About content */
+.about-content {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+} 
+
+.about-content h2.about-content-heading, .about-detail-number {
+    font-size: clamp(30px, 5vw, 48px);
+    font-family: "Mulish-Bold";
+    color: var(--secondary-color);
+}
+
+.about-content p.about-content-paragraph {
+    font-size: clamp(16px, 2vw, 18px);
+    color: var(--accent-color); 
+}
+
+.about-detail{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+ 
+}
+
+.about-detail-heading{
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-size: clamp(10.5px, 2vw, 15px);
+}
+
+.about-detail-number{
+    font-family: "Mulish-Regular";
 }
 
 /* ================== */
@@ -352,6 +409,21 @@ ul.nav-list a:hover {
     .hero-section-mark-2 {
         width: 3vw;
     }
+
+    /* About Section */
+    .about-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .about-image {
+        width: 100%;
+    }
+
+    .about-content {
+        width: 100%;
+    }
+
 }
 
 /* ================== */
@@ -361,7 +433,7 @@ ul.nav-list a:hover {
 
     /* Hero Section */
     .hero-image {
-        width: 120%;
+        width: 115%;
         margin: 0%;
     }
 }
